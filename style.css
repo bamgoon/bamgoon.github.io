@@ -31,10 +31,11 @@ p {
     margin-bottom: 20px;
 }
 
-/* 테이블 스타일 */
+/* 테이블 스타일 (데스크탑) */
 table {
     width: 100%;
-    max-width: 100%; /* 화면 너비를 넘지 않도록 설정 */
+    max-width: 800px;
+    margin: 0 auto;
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -46,41 +47,72 @@ th, td {
 }
 
 th {
-    background-color: #666; /* 무채색 헤더 배경 */
+    background-color: #666;
     color: #fff;
     font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: #f8f8f8; /* 무채색 줄무늬 배경 */
+    background-color: #f8f8f8;
 }
 
 tr:hover {
-    background-color: #e0e0e0; /* 무채색 행 호버 색상 */
+    background-color: #e0e0e0;
 }
 
 /* O와 X 스타일 */
 td.supported {
-    color: #28a745; /* 초록색 (O) */
+    color: #28a745;
     font-weight: bold;
 }
 
 td.unsupported {
-    color: #dc3545; /* 빨간색 (X) */
+    color: #dc3545;
     font-weight: bold;
 }
 
-/* 결과 컨테이너 */
-#result {
-    margin-top: 20px;
-    width: 100%;
-    overflow-x: auto; /* 작은 화면에서 가로 스크롤 지원 */
-}
-
-/* 반응형 디자인 */
+/* 모바일 반응형 스타일 */
 @media (max-width: 600px) {
-    th, td {
-        padding: 8px 10px; /* 좁은 화면에서는 패딩을 줄여서 공간 확보 */
+    table, tr, th, td {
+        display: block;
+        width: 100%;
+    }
+
+    table {
+        border: none;
+        box-shadow: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    th {
+        display: none; /* 헤더 숨기기 */
+    }
+
+    td {
+        text-align: left;
+        padding: 8px 10px;
+        border: none;
+        position: relative;
         font-size: 0.9em;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+        width: 120px;
+        color: #555;
+    }
+
+    td.supported::before,
+    td.unsupported::before {
+        width: 100px;
     }
 }
