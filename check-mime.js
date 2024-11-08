@@ -51,7 +51,11 @@ function displayResults() {
     mimeTypes.forEach((mimeType) => {
         const playback = checkPlaybackSupport(mimeType);
         const recording = checkRecordingSupport(mimeType);
-        resultHTML += `<tr><td>${mimeType}</td><td>${playback}</td><td>${recording}</td></tr>`;
+        
+        const playbackClass = playback === "O" ? "supported" : "unsupported";
+        const recordingClass = recording === "O" ? "supported" : "unsupported";
+        
+        resultHTML += `<tr><td>${mimeType}</td><td class="${playbackClass}">${playback}</td><td class="${recordingClass}">${recording}</td></tr>`;
     });
 
     resultHTML += "</table>";
