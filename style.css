@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     margin: 0;
     padding: 20px;
 }
@@ -31,10 +32,10 @@ p {
     margin-bottom: 20px;
 }
 
-/* 테이블 스타일 (데스크탑) */
+/* 테이블 스타일 */
 table {
     width: 100%;
-    max-width: 800px;
+    max-width: 800px; /* 기본 최대 너비 */
     margin: 0 auto;
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -47,72 +48,40 @@ th, td {
 }
 
 th {
-    background-color: #666;
+    background-color: #666; /* 무채색 헤더 배경 */
     color: #fff;
     font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: #f8f8f8;
+    background-color: #f8f8f8; /* 무채색 줄무늬 배경 */
 }
 
 tr:hover {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; /* 무채색 행 호버 색상 */
 }
 
 /* O와 X 스타일 */
 td.supported {
-    color: #28a745;
+    color: #28a745; /* 초록색 (O) */
     font-weight: bold;
 }
 
 td.unsupported {
-    color: #dc3545;
+    color: #dc3545; /* 빨간색 (X) */
     font-weight: bold;
 }
 
-/* 모바일 반응형 스타일 */
-@media (max-width: 600px) {
-    table, tr, th, td {
-        display: block;
-        width: 100%;
-    }
+/* 결과 컨테이너 */
+#result {
+    margin-top: 20px;
+    overflow-x: auto;
+    width: 100%;
+}
 
+/* 모바일 화면을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
     table {
-        border: none;
-        box-shadow: none;
-    }
-
-    tr {
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        padding: 10px;
-    }
-
-    th {
-        display: none; /* 헤더 숨기기 */
-    }
-
-    td {
-        text-align: left;
-        padding: 8px 10px;
-        border: none;
-        position: relative;
-        font-size: 0.9em;
-    }
-
-    td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        text-transform: uppercase;
-        display: inline-block;
-        width: 120px;
-        color: #555;
-    }
-
-    td.supported::before,
-    td.unsupported::before {
-        width: 100px;
+        max-width: 100%; /* 모바일 화면일 때 테이블의 최대 너비를 화면 너비에 맞춤 */
     }
 }
