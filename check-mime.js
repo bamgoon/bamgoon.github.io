@@ -46,16 +46,16 @@ function checkRecordingSupport(mimeType) {
 
 function displayResults() {
     const resultDiv = document.getElementById("result");
-    let resultHTML = "<table><tr><th>MIME Type</th><th>재생 가능 여부</th><th>녹화 가능 여부</th></tr>";
+    let resultHTML = "<table><tr><th>번호</th><th>MIME Type</th><th>재생 가능 여부</th><th>녹화 가능 여부</th></tr>";
 
-    mimeTypes.forEach((mimeType) => {
+    mimeTypes.forEach((mimeType, index) => {
         const playback = checkPlaybackSupport(mimeType);
         const recording = checkRecordingSupport(mimeType);
         
         const playbackClass = playback === "O" ? "supported" : "unsupported";
         const recordingClass = recording === "O" ? "supported" : "unsupported";
         
-        resultHTML += `<tr><td>${mimeType}</td><td class="${playbackClass}">${playback}</td><td class="${recordingClass}">${recording}</td></tr>`;
+        resultHTML += `<tr><td>${index + 1}</td><td>${mimeType}</td><td class="${playbackClass}">${playback}</td><td class="${recordingClass}">${recording}</td></tr>`;
     });
 
     resultHTML += "</table>";
