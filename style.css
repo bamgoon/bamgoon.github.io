@@ -8,7 +8,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     margin: 0;
     padding: 20px;
 }
@@ -35,8 +34,7 @@ p {
 /* 테이블 스타일 */
 table {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 100%; /* 화면 너비를 넘지 않도록 설정 */
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -75,6 +73,14 @@ td.unsupported {
 /* 결과 컨테이너 */
 #result {
     margin-top: 20px;
-    overflow-x: auto;
     width: 100%;
+    overflow-x: auto; /* 작은 화면에서 가로 스크롤 지원 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+    th, td {
+        padding: 8px 10px; /* 좁은 화면에서는 패딩을 줄여서 공간 확보 */
+        font-size: 0.9em;
+    }
 }
