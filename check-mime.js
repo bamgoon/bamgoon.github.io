@@ -82,12 +82,7 @@ function displayResults() {
             const playbackClass = playback === "O" ? "supported" : "unsupported";
             const recordingClass = recording === "O" ? "supported" : "unsupported";
 
-            groupHTML += `<tr>
-                <td data-label="번호">${index + 1}</td>
-                <td data-label="MIME Type">${mimeType}</td>
-                <td data-label="재생 가능 여부" class="${playbackClass}">${playback}</td>
-                <td data-label="녹화 가능 여부" class="${recordingClass}">${recording}</td>
-            </tr>`;
+            groupHTML += `<tr><td>${index + 1}</td><td>${mimeType}</td><td class="${playbackClass}">${playback}</td><td class="${recordingClass}">${recording}</td></tr>`;
         });
 
         groupHTML += "</table>";
