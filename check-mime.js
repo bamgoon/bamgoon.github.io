@@ -3,13 +3,16 @@ const mimeGroups = {
         "video/webm;codecs=vp8,opus",
         "video/webm;codecs=vp9,opus",
         "video/webm;codecs=vp8",
-        "video/webm;codecs=vp9"
+        "video/webm;codecs=vp9",
+        "video/webm;codecs=vp10",
+        "video/webm;codecs=av1,opus"
     ],
     "MP4 Video": [
         "video/mp4;codecs=avc1.42E01E,mp4a.40.2",
         "video/mp4;codecs=avc1.64001F,mp4a.40.2",
         "video/mp4;codecs=avc1.4D401E",
-        "video/mp4;codecs=hvc1.1.6.L93.B0"
+        "video/mp4;codecs=hvc1.1.6.L93.B0",
+        "video/mp4;codecs=av01.0.05M.08"
     ],
     "Ogg Video": [
         "video/ogg;codecs=theora"
@@ -19,22 +22,27 @@ const mimeGroups = {
         "video/avi",
         "video/mpeg",
         "video/quicktime",
-        "video/x-flv"
+        "video/x-flv",
+        "video/x-matroska;codecs=avc1,opus",
+        "video/x-msvideo"
     ],
     "WebM Audio": [
         "audio/webm;codecs=opus",
-        "audio/webm;codecs=vorbis"
+        "audio/webm;codecs=vorbis",
+        "audio/webm;codecs=pcm"
     ],
     "MP3 Audio": [
         "audio/mp3",
         "audio/mpeg"
     ],
     "MP4 Audio": [
-        "audio/mp4;codecs=mp4a.40.2"
+        "audio/mp4;codecs=mp4a.40.2",
+        "audio/mp4;codecs=aac"
     ],
     "Ogg Audio": [
         "audio/ogg;codecs=opus",
-        "audio/ogg;codecs=vorbis"
+        "audio/ogg;codecs=vorbis",
+        "audio/ogg;codecs=flac"
     ],
     "Other Audio": [
         "audio/wav",
@@ -44,16 +52,20 @@ const mimeGroups = {
         "audio/L16;rate=44100",
         "audio/L16;rate=48000",
         "audio/AMR",
-        "audio/AMR-WB"
+        "audio/AMR-WB",
+        "audio/x-ms-wma"
     ],
     "Streaming Formats": [
         "application/vnd.apple.mpegurl",
         "application/x-mpegURL",
-        "application/dash+xml"
+        "application/dash+xml",
+        "application/vnd.ms-sstr+xml"
     ],
     "Container Formats": [
         "application/ogg",
-        "application/x-matroska"
+        "application/x-matroska",
+        "application/x-quicktimeplayer",
+        "application/x-shockwave-flash"
     ]
 };
 
